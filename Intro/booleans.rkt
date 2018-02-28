@@ -1,0 +1,40 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname booleans) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+;true
+;false
+
+;(define WIDTH 100)
+;(define HEIGHT 120)
+;(> WIDTH HEIGHT)
+;(>= WIDTH HEIGHT)
+
+
+;(if (> HEIGHT WIDTH) "tall" "wide")
+
+(define I1 (rectangle 10 20 "solid" "blue"))
+(define I2 (rectangle 20 10 "solid" "red"))
+
+;step 1 - write out expression
+(if (< (image-width I2) (image-width I1))
+    (image-width I2)
+    (image-width I1))
+;step 2 - convert constants I1/I2 into the actual images
+(if (< (image-width (rectangle 10 20 "solid" "blue")) (image-width (rectangle 20 10 "solid" "red")))
+    (image-width (rectangle 10 20 "solid" "blue"))
+    (image-width (rectangle 20 10 "solid" "red")))
+    
+;step 3 - replace image width calls with resulting values
+(if (< 20 10) 20 10)
+;step 4 - replace predicate expression with resulting boolean value
+(if false 20 10)
+
+10
+
+
+(and (> (image-height I1) (image-height I2)) (< (image-width I1) (image-width I2)))
+(or (< (image-height I1) (image-height I2)) (< (image-width I1) (image-width I2)))
+(not (= (image-height I1) (image-height I2)))
+
+(radial-star 5 2 10 "solid" "blue")
